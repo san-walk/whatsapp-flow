@@ -7,13 +7,14 @@
         <script>
           const params = new URLSearchParams(window.location.search);
           const token = params.get("token");
+          const flow_id = params.get("flow_id");
         
           if (!token) {
             document.body.innerHTML = "Token missing in URL";
             throw new Error("Token missing");
           }
         
-          fetch(`http://127.0.0.1:5000/whatsapp-hook-flow/2?token=${token}`)
+          fetch(`http://127.0.0.1:5000/whatsapp-hook-flow/${flow_id}?token=${token}`)
             .then(res => res.json())
             .then(response => {
               const html = response.data.content;
