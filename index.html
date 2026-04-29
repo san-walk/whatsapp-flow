@@ -14,7 +14,7 @@
             throw new Error("Token missing");
           }
         
-          fetch(`https://test.msg91.com/api/v5/whatsapp/whatsapp-hook-flow/${flow_id}?token=${token}`)
+          fetch(`https://testwhatsapp.phone91.com/whatsapp-hook-flow/${flow_id}?token=${token}`)
             .then(res => res.json())
             .then(response => {
               const html = response.data.content;
